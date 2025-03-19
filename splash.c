@@ -2,9 +2,12 @@
 #include <unistd.h> 
 #include <stdlib.h> 
 #include <windows.h>
+#include <string.h>
 
 #define FRAME_COUNT 94
 #define TERMINAL_WIDTH 150
+
+void printCentered(char *line);
 
 void arrAnimation(){
     
@@ -15,39 +18,18 @@ void arrAnimation(){
     
     };
 
-    int frame = 0, loopCount;
-    
-
     for (int i = 0; i < FRAME_COUNT; i++) {
         system("cls");  // Clear the screen (for Linux/Mac, use "cls" for Windows)
         printf("%s\n", n[i]);  // Print current frame
-        usleep(20000); 
+        usleep(30000); 
     }
 
     for (int i = 0; i < FRAME_COUNT; i++) {
         system("cls");  // Clear the screen (for Linux/Mac, use "cls" for Windows)
         printf("%s\n", n[i]);  // Print current frame
-        usleep(20000); 
+        usleep(30000); 
     }
 }
-
-// void printCentered(int arr[], int size) {
-//     CONSOLE_SCREEN_BUFFER_INFO csbi;
-//     int columns;
-
-//     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-//     columns = csbi.srWindow.Right - csbi.srWindow.Left + 1; // Get terminal width
-
-//     char buffer[columns];
-//     int offset = 0;
-
-//     for (int i = 0; i < size; i++) {
-//         offset += sprintf(buffer + offset, "%d ", arr[i]);
-//     }
-
-//     int padding = (columns - strlen(buffer)) / 2;
-//     printf("%*s%s\n", padding, "", buffer);
-// }
 
 int main(){
 
