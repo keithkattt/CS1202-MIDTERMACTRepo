@@ -62,7 +62,39 @@ void loadingAnimation() {
     system("cls");
 }
 
+void decreaseFontSize(){ 
+    
+    // Simulate pressing Ctrl
+   keybd_event(VK_CONTROL, 0, 0, 0);
+
+   // Simulate pressing '-' (minus key)
+   keybd_event(VK_OEM_MINUS, 0, 0, 0);
+
+   // Release '-' key
+   keybd_event(VK_OEM_MINUS, 0, KEYEVENTF_KEYUP, 0);
+
+   // Release Ctrl key
+   keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+
+}
+
+void increaseFontSize(){
+    // Simulate pressing CTRL
+    keybd_event(VK_CONTROL, 0, 0, 0);
+
+    // Simulate pressing '+'
+    keybd_event(VK_OEM_PLUS, 0, 0, 0);
+
+    // Release '+'
+    keybd_event(VK_OEM_PLUS, 0, KEYEVENTF_KEYUP, 0);
+
+    // Release CTRL
+    keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+
+}
+
  void mainwelcome() {
+       
         const char *welcome[] = {
          "-------------------------------------------------------------------------------------------------------------------------------------------------------",
          "\tWELCOME TO MY SPLASH THE SYSTEM IS INIALIZING.....PLEASE WAIT",
@@ -136,19 +168,20 @@ void loadingAnimation() {
       
 
     system("cls"); // Clear screen
-
+    
     SetColorAndBackground(6, 0); // 6 = Brown text, 0 = Black background
-
+    decreaseFontSize();
     int lines = sizeof(welcome) / sizeof(welcome[0]); // Get number of lines
     for (int i = 0; i < lines; i++) {
         printf("%s\n", welcome[i]);
         Sleep(70); // Animation delay
     }
 
-     
+    
     printf("\nPress any key to boot up the system...");  
     getch(); // Wait for key press
     ResetColor(); // Reset text color
+    increaseFontSize();
 }
     
 
