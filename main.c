@@ -4,6 +4,7 @@
 #include <windows.h>
 #include "functions.h"
 #include "GroupArray.c"
+#include "acknowledgments.c"
 #include "AclanArray1C.c"
 #include "AclanSplash.c"
 #include "MacabuhayArray2B.c"
@@ -33,6 +34,7 @@ void activitiesSubMenu2();
 int main(){
     mainSplash();
     mainMenu();
+    acknowledgements();
 }
 
 void displayMainMenu(int option) { 
