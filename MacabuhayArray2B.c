@@ -17,18 +17,20 @@ void search_element(int arr[ROWS][COLS], int search) {
     printf("Element not found in the array.\n");
 }
 
-int main() {
+void mainArrayMacabuhay() {
     int array_name[ROWS][COLS] = {
         {1, 2, 3, 4},
         {5, 6, 7, 8},
         {9, 10, 11, 12}
     };
     int search;
-    
     printf("Input the element to search: ");
     scanf("%d", &search);
     
     search_element(array_name, search);
     
-    return 0;
+    printf("\nPress any key to exit...");
+    getch(); // Wait for key press before closing
+    
+    return;
 }

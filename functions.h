@@ -28,7 +28,7 @@ void resetColor() {
 }
 
 void ResetColor(){
-    SetColorAndBackground(7, 0);
+    SetColorAndBackground(15, 0);
 }
 
 void gotoxy(int x, int y){
@@ -37,6 +37,37 @@ void gotoxy(int x, int y){
 
             SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),xyPos);
             return;
+}
+
+void decreaseFontSize(){ 
+    
+    // Simulate pressing Ctrl
+   keybd_event(VK_CONTROL, 0, 0, 0);
+
+   // Simulate pressing '-' (minus key)
+   keybd_event(VK_OEM_MINUS, 0, 0, 0);
+
+   // Release '-' key
+   keybd_event(VK_OEM_MINUS, 0, KEYEVENTF_KEYUP, 0);
+
+   // Release Ctrl key
+   keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+
+}
+
+void increaseFontSize(){
+    // Simulate pressing CTRL
+    keybd_event(VK_CONTROL, 0, 0, 0);
+
+    // Simulate pressing '+'
+    keybd_event(VK_OEM_PLUS, 0, 0, 0);
+
+    // Release '+'
+    keybd_event(VK_OEM_PLUS, 0, KEYEVENTF_KEYUP, 0);
+
+    // Release CTRL
+    keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+
 }
 
 #endif

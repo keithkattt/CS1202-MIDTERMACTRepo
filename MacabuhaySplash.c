@@ -3,11 +3,9 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdlib.h>
+#include "functions.h"
 
-void SetColorAndBackground(int ForgC, int BackC);
-void ResetColor();
-
-int main() {
+void mainSplashMacabuhay() {
      const char *splash[] = {
      	
         "\t\t   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////",
@@ -55,14 +53,5 @@ int main() {
     
     system("cls"); // Clear the screen
     ResetColor(); // Reset text color to white and background to black
-    return 0;
-}
-
-void SetColorAndBackground(int ForgC, int BackC) {
-    WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
-}
-
-void ResetColor() {
-    SetColorAndBackground(15, 0); // Reset text color to white and background to black
+    return;
 }

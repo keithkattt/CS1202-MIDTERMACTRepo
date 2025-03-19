@@ -31,7 +31,8 @@ void printEffect(const char *text, int delayTime) {
     }
 }
 
-int main() {
+void mainSplashTominez() {
+    system("cls");
     setColor(7); // Set text color gray
     printf("\n\n");
     
@@ -52,11 +53,12 @@ int main() {
 
     
 
-   gotoXY(30,16); printEffect("\nPress any key to continue...", 50);
+    gotoXY(30,16); printEffect("\nPress any key to continue...", 50);
     getch(); // Wait for key press before closing
 
     setColor(7); // Reset text color to default
-    return 0;
+   
+    return;
 }
 
 

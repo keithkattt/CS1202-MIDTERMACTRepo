@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void mainArrayTubice() {
     int array[5];
     int smallest;
     int position;
@@ -31,5 +31,8 @@ int main() {
     printf("Position of the element: %d\n", position);
     printf("Index of the element: array_name[%d]\n", index);
 
-    return 0;
+    printf("\nPress any key to exit...");
+    getch(); // Wait for key press before closing
+
+    return;
 }

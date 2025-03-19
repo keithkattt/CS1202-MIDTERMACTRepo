@@ -2,7 +2,7 @@
 #include "functions.h"
 
 
-int main() {
+void mainArrayUmali() {
     int array[10];
     int i;
 
@@ -18,5 +18,10 @@ int main() {
         printf("array[%d] = %d\n", i, array[i]);
     }
     SetColorAndBackground(15, 0); // Reset to default color
-    return 0;
+
+
+    printf("\nPress any key to exit...");
+    getch(); // Wait for key press before closing
+    
+    return;
 }

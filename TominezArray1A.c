@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main () {
+void mainArrayTominez () {
     int arrA[5];
 
     // Input values
@@ -21,7 +21,10 @@ int main () {
         printf("arrA[%d] = %d\n", i, arrA[i]);
     }
 
-    return 0;
+    printf("\nPress any key to exit...");
+    getch(); // Wait for key press before closing
+    
+    return;
 }
 
 	

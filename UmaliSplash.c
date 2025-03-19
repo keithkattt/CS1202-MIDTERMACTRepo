@@ -17,37 +17,6 @@
 #define YELLOW  14
 #define WHITE   15
 
-void decreaseFontSize(){ 
-    
-    // Simulate pressing Ctrl
-   keybd_event(VK_CONTROL, 0, 0, 0);
-
-   // Simulate pressing '-' (minus key)
-   keybd_event(VK_OEM_MINUS, 0, 0, 0);
-
-   // Release '-' key
-   keybd_event(VK_OEM_MINUS, 0, KEYEVENTF_KEYUP, 0);
-
-   // Release Ctrl key
-   keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
-
-}
-
-void increaseFontSize(){
-    // Simulate pressing CTRL
-    keybd_event(VK_CONTROL, 0, 0, 0);
-
-    // Simulate pressing '+'
-    keybd_event(VK_OEM_PLUS, 0, 0, 0);
-
-    // Release '+'
-    keybd_event(VK_OEM_PLUS, 0, KEYEVENTF_KEYUP, 0);
-
-    // Release CTRL
-    keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
-
-}
-
 void splashAnimation(){
     
     char *n[] = {
@@ -157,10 +126,9 @@ void exitSplash(){
     system("cls");
 }
 
-int main(){
+void mainSplashUmali(){
     startingSplash();
     splashAnimation();
     exitSplash();
-
-    return 0;
+    return;
 }

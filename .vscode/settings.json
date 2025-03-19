@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "AclanSplash.C": "cpp"
+        "AclanSplash.C": "cpp",
+        "functions.h": "c",
+        "stdio.h": "c"
     }
 }

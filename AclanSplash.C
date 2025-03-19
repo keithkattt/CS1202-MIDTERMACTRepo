@@ -3,15 +3,7 @@
 #include <conio.h>   // For getch()
 #include <stdlib.h>  // For system()
 #include <unistd.h>  // For usleep (if needed, but we will replace it with Sleep)
-
-void SetColorAndBackground(int textColor, int bgColor) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, textColor + (bgColor * 16));
-}
-
-void ResetColor() {
-    SetColorAndBackground(15, 0); // White text, black background
-}
+#include "functions.h"
 
 void asciiAnimation() {
     system("cls");
@@ -60,37 +52,6 @@ void loadingAnimation() {
     Sleep(500);
     ResetColor();
     system("cls");
-}
-
-void decreaseFontSize(){ 
-    
-    // Simulate pressing Ctrl
-   keybd_event(VK_CONTROL, 0, 0, 0);
-
-   // Simulate pressing '-' (minus key)
-   keybd_event(VK_OEM_MINUS, 0, 0, 0);
-
-   // Release '-' key
-   keybd_event(VK_OEM_MINUS, 0, KEYEVENTF_KEYUP, 0);
-
-   // Release Ctrl key
-   keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
-
-}
-
-void increaseFontSize(){
-    // Simulate pressing CTRL
-    keybd_event(VK_CONTROL, 0, 0, 0);
-
-    // Simulate pressing '+'
-    keybd_event(VK_OEM_PLUS, 0, 0, 0);
-
-    // Release '+'
-    keybd_event(VK_OEM_PLUS, 0, KEYEVENTF_KEYUP, 0);
-
-    // Release CTRL
-    keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
-
 }
 
  void mainwelcome() {
@@ -186,7 +147,7 @@ void increaseFontSize(){
     
 
     // ASCII Art Splash Screen
-    void mainSplash() {
+    void mainSubSplash() {
         const char *splash[] = {
             "\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
             "\t@@                                                                                                           @@",
@@ -253,15 +214,15 @@ void increaseFontSize(){
         system("cls");
         printf("\n\n\tThank you for using the program. Goodbye!\n\n");
         ResetColor();
-        exit(0);
     }
 
-    int main() {
+    void mainSplashAclan() {
         mainwelcome();
         asciiAnimation();
         spinningAnimation();
         loadingAnimation();
-        mainSplash();
+        mainSubSplash();
         terminationScreen();
-        return 0;
+        system("cls");
+        return;
     }
